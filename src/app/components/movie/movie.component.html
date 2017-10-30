@@ -1,25 +1,35 @@
- <div class="container">
-   <div class="row">
+ 
+
+    <a class="waves-effect waves-light btn" (click)="MovieShows()">Movies</a>
+    <a class="waves-effect waves-light btn" (click)="Tvshows()">Tv shows</a>
+
+
+   <div class="row" *ngIf="showMovie">
           <div class="col s12 m6" *ngFor="let movie of movie.results">
     <h2 class="header"></h2>
     <div class="card horizontal small">
       <div class="card-image">
         <img src="{{images.base_url}}{{postersize}}{{movie.poster_path}}">
+        
       </div>
       <div class="card-stacked">
         <div class="card-content">
           <p>  {{ movie .title}}</p>
           <p>  {{ movie .release_date | date}}</p>
            <p>  {{ movie .vote_average}}</p>
-           <p> {{movie.genre_ids}}</p>
+           <p> {{movie.genre_ids | filter:genreContent}}</p>
+           <p>{{movie.overview|limit}}</p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+          <a href="#">More info</a>
         </div>
       </div>
     </div>
   </div>
-   </div>  
- </div>
+   </div> 
+    <app-serial *ngIf="showTvshows"></app-serial> 
 
- <a class="waves-effect waves-light btn">Next</a>
+
+ <a class="waves-effect waves-light btn" (click)="changePage('pre')" *ngIf="show">previous</a>
+ <a class="waves-effect waves-light btn" (click)="changePage('nxt')">Next</a>
+ <a class="btn tooltipped" data-position="top" data-delay="50" data-tooltip="I am a tooltip">Hover me!</a>

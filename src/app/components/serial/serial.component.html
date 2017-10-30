@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col s12 m6" *ngFor="let serial of serial.results">
+<h2 class="header"></h2>
+<div class="card horizontal small">
+<div class="card-image">
+  <img src="{{images.base_url}}{{postersize}}{{serial.poster_path}}" alt="img">
+</div>
+<div class="card-stacked">
+  <div class="card-content">
+   <p>{{serial.original_name}}</p>
+  </div>
+  <div class="card-action">
+    <a href="#">More info</a>
+  </div>
+</div>
+</div>
+</div>
+</div> 

@@ -1,12 +1,18 @@
- <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo right">Logo</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-    
-    </div>
-  </nav>
+<nav>
+  <div class="nav-wrapper">
+  <a href="#" class="brand-logo right">Logo</a>
+  <ul id="nav-mobile" class="left hide-on-med-and-down">
+    <li><a href="sass.html">Home</a></li>
+    <li><a href="badges.html">Movies</a></li>
+    <li><a href="collapsible.html">Serials</a></li>
+  </ul>
+  </div>
+</nav>
+<div class="container">
+<a class="waves-effect waves-light btn" (click)="MovieShows()">Movies</a>
+<a class="waves-effect waves-light btn" (click)="Tvshows()">Tv shows</a>
 <app-movie></app-movie>
+<a class="waves-effect waves-light btn" (click)="changePage('pre')" *ngIf="show">previous</a>
+<a class="waves-effect waves-light btn" (click)="changePage('nxt')">Next</a>
+<a class="btn tooltipped" data-position="top" data-delay="50" data-tooltip="I am a tooltip">Hover me!</a>
+</div>

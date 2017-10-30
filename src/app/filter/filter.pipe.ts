@@ -6,13 +6,19 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  public result : string;
+  public result : string[] = [];
 
-
-
-  transform(value: any, args?: any): any {
-   this.result = value.slice(0, -1);
-   return this.result;
+  transform(genres: any, genres_name?: any): any {
+    this.result = [];
+    genres.forEach(id => {
+      for (var key in genres_name) {
+        var obj = genres_name[key];
+        if(id == obj.id){
+          this.result.push(obj.name);
+        }
+      }
+    });
+    return this.result;
   }
 
 }
